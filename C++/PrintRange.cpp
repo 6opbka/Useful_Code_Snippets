@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 //Prints the elements in range of iterators
 template <typename It>
 void PrintRange(It range_begin, It range_end){
