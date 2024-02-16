@@ -16,8 +16,9 @@ public:
 
     // Destructor
     ~List(){
-
+        clear();
     }
+
     int size(){
         return Size;
     }
@@ -114,7 +115,11 @@ public:
         delete toDelete;
         Size--;
     }
-
+    void clear(){
+        while(Size>0){
+            pop_front();
+        }
+    }
 
 private:
     // Node class that has the data and the pointer to the next node
@@ -140,8 +145,11 @@ int main(){
     lst.push_back(5);
     lst.push_back(10);
     lst.push_back(11);
-    cout<<lst.size()<<endl;
+    lst.insert(11,1);
+    lst.pop_back();
     lst.pop_front();
-    cout<<lst.size();
+    lst.remove_at(1);
+    cout<<lst.size()<<endl;
+    cout<<lst[0]<<endl;
     return 0;
 }
